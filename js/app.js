@@ -35,3 +35,27 @@ document.getElementById('key-pad').addEventListener('click', function(even){
         calInput.value = newNumber;
     }
 });
+
+
+function verifyPin()
+{
+    // console.log('versify function');
+    const pin = document.getElementById('display-pin').value;
+    const typedNumbers = document.getElementById('typed-numbers').value;
+
+    const successNotification = document.getElementById('notify-success');
+    const failNotification = document.getElementById('notify-fail');
+
+    if(pin == typedNumbers)
+    {
+        // console.log('currect!');
+        successNotification.style.display = 'block';
+        failNotification.style.display = 'none';
+    }
+    else
+    {
+        // console.log('wrong!');
+        failNotification.style.display = 'block';
+        successNotification.style.display = 'none';
+    }
+}
